@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RuleNameController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.controllers</a> &gt; <span class="el_source">RuleNameController.java</span></div><h1>RuleNameController.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.controllers;
+
+import com.nnk.springboot.domain.RuleName;
+import com.nnk.springboot.exception.RuleNameNotFoundException;
+import com.nnk.springboot.service.RuleNameService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
+
+@Controller
+<span class="fc" id="L20">public class RuleNameController {</span>
+
+<span class="fc" id="L22">    private final Logger logger = LoggerFactory.getLogger(RuleNameController.class);</span>
+
+    @Autowired
+    private RuleNameService ruleNameService;
+
+    /**
+     * GET request. Displaying all ruleName that exist in database
+     *
+     * @param model interface that defines a holder for model attributes.
+     * @return String &quot;ruleName/list&quot;
+     */
+    @RequestMapping(&quot;/ruleName/list&quot;)
+    public String home(Model model) {
+<span class="fc" id="L35">        model.addAttribute(&quot;ruleName&quot;,ruleNameService.getAllruleName());</span>
+<span class="fc" id="L36">        logger.info(&quot;Controller: GET /ruleName/list. Displaying list of ruleName&quot;);</span>
+<span class="fc" id="L37">        return &quot;ruleName/list&quot;;</span>
+    }
+
+    /**
+     * GET request. Displaying form for adding new ruleName to database
+     * @return String &quot;ruleName/add&quot;
+     */
+    @GetMapping(&quot;/ruleName/add&quot;)
+    public String addRuleForm(RuleName ruleName) {
+<span class="fc" id="L46">        logger.info(&quot;Controller: GET /ruleName/add. Displaying form for adding new ruleName&quot;);</span>
+<span class="fc" id="L47">        return &quot;ruleName/add&quot;;</span>
+    }
+
+    @PostMapping(&quot;/ruleName/validate&quot;)
+    public String validate(@Valid RuleName ruleName, BindingResult result) {
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if(result.hasErrors()){</span>
+<span class="fc" id="L53">            logger.error(&quot;Controller: Error. RuleName fields have errors&quot;);</span>
+<span class="fc" id="L54">            return &quot;ruleName/add&quot;;</span>
+        }
+<span class="fc" id="L56">        ruleNameService.saveRuleName(ruleName);</span>
+<span class="fc" id="L57">        logger.info(&quot;Controller: redirect:/ruleName/list. RuleName has been added to the list&quot;);</span>
+<span class="fc" id="L58">        return &quot;redirect:/ruleName/list&quot;;</span>
+    }
+
+    /**
+     * GET request. Displaying form for update existing ruleName in database
+     * @param id RuleName's ID
+     * @param model Model object
+     * @return String &quot;ruleName/update&quot;
+     */
+    @GetMapping(&quot;/ruleName/update/{id}&quot;)
+    public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
+        try {
+<span class="fc" id="L70">            RuleName ruleName = ruleNameService.getRuleNameById(id);</span>
+<span class="fc" id="L71">            model.addAttribute(&quot;ruleName&quot;, ruleName);</span>
+<span class="fc" id="L72">        } catch (RuleNameNotFoundException e) {</span>
+<span class="fc" id="L73">            logger.error(&quot;Controller: RuleName NOT found with id: &quot; + id);</span>
+<span class="fc" id="L74">            return &quot;redirect:/error&quot;;</span>
+<span class="fc" id="L75">        }</span>
+<span class="fc" id="L76">        logger.info(&quot;Controller: GET /ruleName/update/{id}. Displaying form for update existing ruleName&quot;);</span>
+<span class="fc" id="L77">        return &quot;ruleName/update&quot;;</span>
+    }
+
+    /**
+     *  POST request. Updating existing ruleName
+     * @param id RuleName's ID
+     * @param ruleName RuleName object
+     * @param result BindingResult for validation
+     * @return String &quot;redirect:/ruleName/list&quot;
+     */
+    @PostMapping(&quot;/ruleName/update/{id}&quot;)
+    public String updateRuleName(@PathVariable(&quot;id&quot;) Integer id, @Valid RuleName ruleName, BindingResult result) {
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        if(result.hasErrors()){</span>
+<span class="fc" id="L90">            logger.info(&quot;Controller: Error. RuleName fields have errors&quot;);</span>
+<span class="fc" id="L91">            return &quot;ruleName/update&quot;;</span>
+        }
+<span class="fc" id="L93">        ruleName.setId(id);</span>
+<span class="fc" id="L94">        ruleNameService.updateRuleName(ruleName);</span>
+<span class="fc" id="L95">        logger.info(&quot;Controller: RuleName has been updated&quot;);</span>
+<span class="fc" id="L96">        return &quot;redirect:/ruleName/list&quot;;</span>
+    }
+
+    /**
+     * GET request. Delete existing ruleName by ID from database
+     * @param id RuleName's ID
+     * @return String &quot;redirect:/ruleName/list&quot;
+     */
+    @GetMapping(&quot;/ruleName/delete/{id}&quot;)
+    public String deleteRuleName(@PathVariable(&quot;id&quot;) Integer id) {
+<span class="fc" id="L106">       ruleNameService.deleteRuleName(id);</span>
+<span class="fc" id="L107">        logger.info(&quot;Controller: GET /ruleName/delete/{id}. RuleName has been removed&quot;);</span>
+<span class="fc" id="L108">        return &quot;redirect:/ruleName/list&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

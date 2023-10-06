@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.service</a> &gt; <span class="el_source">UserService.java</span></div><h1>UserService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.service;
+
+import com.nnk.springboot.domain.User;
+import com.nnk.springboot.exception.UserNameExistInDataBaseException;
+import com.nnk.springboot.exception.UserNotFoundException;
+import com.nnk.springboot.repositories.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+@Service
+<span class="fc" id="L19">public class UserService {</span>
+
+<span class="fc" id="L21">    private final Logger logger = LoggerFactory.getLogger(UserService.class);</span>
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    /**
+     * Get a list of all users
+     * @return list of User containing all users
+     */
+    public List&lt;User&gt; findAllUsers() {
+<span class="fc" id="L34">        logger.info(&quot;Service: display all users&quot;);</span>
+<span class="fc" id="L35">        return userRepository.findAll();</span>
+    }
+
+    /**
+     * Get user by id.
+     * @param id Integer that containing id of the User
+     * @return Instance of User
+     */
+    public User getUserById(int id) {
+<span class="fc" id="L44">        Optional&lt;User&gt; user = userRepository.findById(id);</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if(user.isPresent()) {</span>
+<span class="fc" id="L46">            logger.info(&quot;Service: User with Id &quot;+id+&quot; was found&quot;);</span>
+<span class="fc" id="L47">            return user.get();</span>
+        } else {
+<span class="fc" id="L49">            throw new UserNotFoundException(&quot;User not found&quot;);</span>
+        }
+    }
+
+    /**
+     * Save a new User
+     * @param user
+     * @return User saved
+     */
+    public User saveUser(User user) {
+<span class="fc" id="L59">        List&lt;User&gt; usersList = findAllUsers();</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        for(User userToSave: usersList){</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">            if(userToSave.getUsername().equals(user.getUsername())){</span>
+<span class="fc" id="L62">                throw new UserNameExistInDataBaseException</span>
+<span class="fc" id="L63">                        (&quot;This user name &quot;+&quot;'&quot;+user.getUsername() +&quot;'&quot;+&quot; already exist. User name must be unique&quot;);</span>
+            }
+<span class="nc" id="L65">        }</span>
+<span class="fc" id="L66">        logger.info(&quot;Service: save new user to DB&quot;);</span>
+<span class="fc" id="L67">        return userRepository.save(user);</span>
+    }
+
+    /**
+     * Update existing user
+     * @param user instance
+     * @return the User updated
+     */
+    public User updateUser (User user) {
+<span class="fc" id="L76">        User userForUpdate = userRepository.getById(user.getId());</span>
+
+<span class="fc" id="L78">        List&lt;User&gt;listWithOneUserForUpdate = userRepository.findAllById(Collections.singleton(user.getId()));</span>
+
+<span class="fc" id="L80">        List&lt;User&gt; listWithAllUsers = findAllUsers();</span>
+
+<span class="fc" id="L82">        List&lt;User&gt; usersListWithoutUserForUpdate = listWithAllUsers.stream().filter(</span>
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">                user1 -&gt; !listWithOneUserForUpdate.contains(user1)</span>
+<span class="fc" id="L84">        ).collect(Collectors.toList());</span>
+
+<span class="fc" id="L86">        userForUpdate.setFullname(user.getFullname());</span>
+<span class="fc" id="L87">        userForUpdate.setUsername(user.getUsername());</span>
+<span class="fc" id="L88">        userForUpdate.setPassword(passwordEncoder.encode(user.getPassword()));</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        for (User user2: usersListWithoutUserForUpdate) {</span>
+<span class="pc bpc" id="L90" title="1 of 2 branches missed.">            if (user2.getUsername().equals(user.getUsername())) {</span>
+<span class="fc" id="L91">                throw new UserNameExistInDataBaseException</span>
+<span class="fc" id="L92">                        (&quot;This user name &quot; + &quot;'&quot; + user.getUsername() + &quot;'&quot; + &quot; already exist. User name must be unique&quot;);</span>
+            }
+<span class="nc" id="L94">        }</span>
+<span class="fc" id="L95">        logger.info(&quot;Service: User updated with ID: &quot; + user.getId());</span>
+<span class="fc" id="L96">        return userRepository.save(userForUpdate);</span>
+    }
+
+    /**
+     * Delete a User by id
+     * @param id Integer that containing id of the User
+     */
+    public void deleteUser(Integer id) {
+<span class="fc" id="L104">        logger.info(&quot;Service: User deleted with ID: &quot; + id);</span>
+<span class="fc" id="L105">        userRepository.deleteById(id);</span>
+<span class="fc" id="L106">        }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

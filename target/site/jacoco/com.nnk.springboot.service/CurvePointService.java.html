@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CurvePointService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.service</a> &gt; <span class="el_source">CurvePointService.java</span></div><h1>CurvePointService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.service;
+
+import com.nnk.springboot.domain.CurvePoint;
+import com.nnk.springboot.exception.CurvePointNotFoundException;
+import com.nnk.springboot.repositories.CurvePointRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+<span class="fc" id="L15">public class CurvePointService {</span>
+
+<span class="fc" id="L17">    private final Logger logger = LoggerFactory.getLogger(CurvePointService.class);</span>
+
+    @Autowired
+    CurvePointRepository curvePointRepository;
+
+    /**
+     * Get a list of all curvePoint
+     * @return list of CurvePoint containing all curvePoints
+     */
+    public List&lt;CurvePoint&gt; getAllCurvePoint() {
+<span class="fc" id="L27">        logger.info(&quot;Service: display curvePoints list&quot;);</span>
+<span class="fc" id="L28">        return curvePointRepository.findAll();</span>
+    }
+
+    /**
+     * Save a new CurvePoint
+     * @param curvePoint
+     * @return CurvePoint saved
+     */
+    public CurvePoint saveCurvePoint (CurvePoint curvePoint) {
+<span class="fc" id="L37">        logger.info(&quot;Service: save new curvePoints to DB&quot;);</span>
+<span class="fc" id="L38">        return curvePointRepository.save(curvePoint);</span>
+    }
+
+    /**
+     * Get curvePoint by id.
+     * @param id Integer that containing id of the CurvePoint
+     * @return Instance of CurvePoint
+     */
+    public CurvePoint getCurvePointById(Integer id) {
+<span class="fc" id="L47">        Optional&lt;CurvePoint&gt; curvePoint = curvePointRepository.findById(id);</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if(curvePoint.isPresent()) {</span>
+<span class="fc" id="L49">            logger.info(&quot;Service: CurvePoint with Id &quot;+id+&quot; was found&quot;);</span>
+<span class="fc" id="L50">            return curvePoint.get();</span>
+        } else {
+<span class="fc" id="L52">            throw new CurvePointNotFoundException(&quot;CurvePoint not found&quot;);</span>
+        }
+    }
+
+    /**
+     * Update existing curvePoint
+     * @param curvePoint instance
+     * @return the CurvePoint updated
+     */
+    public CurvePoint updateCurvePoint (CurvePoint curvePoint) {
+<span class="fc" id="L62">        CurvePoint curvePointForUpdate = curvePointRepository.getById(curvePoint.getId());</span>
+<span class="fc" id="L63">        curvePointForUpdate.setCurveId(curvePoint.getCurveId());</span>
+<span class="fc" id="L64">        curvePointForUpdate.setTerm(curvePoint.getTerm());</span>
+<span class="fc" id="L65">        curvePointForUpdate.setValue(curvePoint.getValue());</span>
+<span class="fc" id="L66">        logger.info(&quot;Service: CurvePoint updated with ID: &quot; + curvePoint.getId());</span>
+<span class="fc" id="L67">        return curvePointRepository.save(curvePointForUpdate);</span>
+    }
+
+    /**
+     * Delete a CurvePoint by id
+     * @param id Integer that containing id of the CurvePoint
+     */
+    public void deleteCurvePoint(Integer id) {
+<span class="fc" id="L75">        logger.info(&quot;Service: CurvePoint deleted with ID: &quot; + id);</span>
+<span class="fc" id="L76">        curvePointRepository.deleteById(id);</span>
+<span class="fc" id="L77">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

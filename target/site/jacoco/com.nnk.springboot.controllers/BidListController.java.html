@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BidListController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.controllers</a> &gt; <span class="el_source">BidListController.java</span></div><h1>BidListController.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.controllers;
+
+import com.nnk.springboot.domain.BidList;
+import com.nnk.springboot.exception.BidListNotFoundException;
+import com.nnk.springboot.service.BidService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+
+
+@Controller
+<span class="fc" id="L18">public class BidListController {</span>
+
+<span class="fc" id="L20">    private final Logger logger = LoggerFactory.getLogger(BidListController.class);</span>
+    @Autowired
+    BidService bidService;
+
+    /**
+     * GET request. Displaying all bidList that exist in database
+     *
+     * @param model interface that defines a holder for model attributes.
+     * @return String &quot;bidList/list&quot;
+     */
+    @RequestMapping(&quot;/bidList/list&quot;)
+    public String home(Model model) {
+<span class="fc" id="L32">        model.addAttribute(&quot;bidList&quot;, bidService.getAllBidList());</span>
+<span class="fc" id="L33">        logger.info(&quot;Controller: GET /bidList/list. Displaying list of bidList&quot;);</span>
+<span class="fc" id="L34">        return &quot;bidList/list&quot;;</span>
+    }
+
+    /**
+     * GET request. Displaying form for adding new bidList to database
+     * @param bid BidList object
+     * @return String &quot;bidList/add&quot;
+     */
+    @GetMapping(&quot;/bidList/add&quot;)
+    public String addBidForm(BidList bid, Model model) {
+<span class="fc" id="L44">        model.addAttribute(&quot;bidList&quot;, new BidList());</span>
+<span class="fc" id="L45">        logger.info(&quot;Controller: GET /bidList/add. Displaying form for adding new bidList&quot;);</span>
+<span class="fc" id="L46">        return &quot;bidList/add&quot;;</span>
+    }
+
+    /**
+     * POST request. Validation bidList entry
+     * @param bid BidList object
+     * @param result BindingResult for validation
+     * @return String &quot;redirect:/bidList/list&quot;
+     */
+    @PostMapping(&quot;/bidList/validate&quot;)
+    public String validate(@Valid  BidList bid, BindingResult result, Model model) {
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (result.hasErrors()) {</span>
+<span class="fc" id="L58">            logger.error(&quot;Controller: Error. BidList fields have errors&quot;);</span>
+<span class="fc" id="L59">            return &quot;bidList/add&quot;;</span>
+        }
+<span class="fc" id="L61">        bidService.saveBidList(bid);</span>
+<span class="fc" id="L62">        logger.info(&quot;Controller: redirect:/bidList/list. BidList has been added to the list&quot;);</span>
+<span class="fc" id="L63">        return &quot;redirect:/bidList/list&quot;;</span>
+    }
+
+    /**
+     * GET request. Displaying form for update existing bidList in database
+     * @param id BidList's ID
+     * @param model Model object
+     * @return String &quot;bidList/update&quot;
+     */
+    @GetMapping(&quot;/bidList/update/{id}&quot;)
+    public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
+        try {
+<span class="fc" id="L75">            BidList bidList = bidService.getBidListById(id);</span>
+<span class="fc" id="L76">            model.addAttribute(&quot;bidList&quot;, bidList);</span>
+<span class="fc" id="L77">        } catch (BidListNotFoundException e) {</span>
+<span class="fc" id="L78">            logger.error(&quot;Controller: BidList NOT found with id: &quot; + id);</span>
+<span class="fc" id="L79">            return &quot;redirect:/error&quot;;</span>
+<span class="fc" id="L80">        }</span>
+<span class="fc" id="L81">        logger.info(&quot;Controller: GET /bidList/update/{id}. Displaying form for update existing bidList&quot;);</span>
+<span class="fc" id="L82">        return &quot;bidList/update&quot;;</span>
+    }
+
+    /**
+     *  POST request. Updating existing bidList
+     * @param id User's ID
+     * @param bidList BidList object
+     * @param result BindingResult for validation
+     * @return String &quot;redirect:/bidList/list&quot;
+     */
+    @PostMapping(&quot;/bidList/update/{id}&quot;)
+    public String updateBid(@PathVariable(&quot;id&quot;) Integer id, @Valid @ModelAttribute(&quot;bidList&quot;) BidList bidList,
+                            BindingResult result, Model model) {
+<span class="fc bfc" id="L95" title="All 2 branches covered.">        if (result.hasErrors()) {</span>
+<span class="fc" id="L96">            logger.error(&quot;Controller: Error. BidList fields have errors&quot;);</span>
+<span class="fc" id="L97">            return &quot;bidList/update&quot;;</span>
+        }
+<span class="fc" id="L99">        bidList.setBidListId(id);</span>
+<span class="fc" id="L100">        bidService.updateBidList(bidList);</span>
+<span class="fc" id="L101">        logger.info(&quot;Controller: BidList has been updated&quot;);</span>
+<span class="fc" id="L102">        return &quot;redirect:/bidList/list&quot;;</span>
+    }
+
+    /**
+     * GET request. Delete existing bidList by ID from database
+     * @param id BidList's ID
+     * @return String &quot;redirect:/bidList/list&quot;
+     */
+    @GetMapping(&quot;/bidList/delete/{id}&quot;)
+    public String deleteById(@PathVariable(&quot;id&quot;) Integer id) {
+<span class="fc" id="L112">        bidService.deleteBidList(id);</span>
+<span class="fc" id="L113">        logger.info(&quot;Controller: GET /bidList/delete/{id}. BidList has been removed&quot;);</span>
+<span class="fc" id="L114">        return &quot;redirect:/bidList/list&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

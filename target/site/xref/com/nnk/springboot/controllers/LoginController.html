@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>LoginController xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../apidocs/com/nnk/springboot/controllers/LoginController.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <strong class="jxr_keyword">package</strong> com.nnk.springboot.controllers;
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> com.nnk.springboot.repositories.UserRepository;
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> org.springframework.beans.factory.annotation.Autowired;
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">import</strong> org.springframework.stereotype.Controller;
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> org.springframework.web.bind.annotation.GetMapping;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.springframework.web.bind.annotation.RequestMapping;
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> org.springframework.web.servlet.ModelAndView;
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  @Controller
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  @RequestMapping(<span class="jxr_string">"app"</span>)
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="LoginController" href="../../../../com/nnk/springboot/controllers/LoginController.html#LoginController">LoginController</a> {
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>      @Autowired
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>      <strong class="jxr_keyword">private</strong> <a name="UserRepository" href="../../../../com/nnk/springboot/repositories/UserRepository.html#UserRepository">UserRepository</a> userRepository;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>      @GetMapping(<span class="jxr_string">"secure/article-details"</span>)
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>      <strong class="jxr_keyword">public</strong> ModelAndView getAllUserArticles() {
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>          ModelAndView mav = <strong class="jxr_keyword">new</strong> ModelAndView();
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>          mav.addObject(<span class="jxr_string">"users"</span>, userRepository.findAll());
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>          mav.setViewName(<span class="jxr_string">"user/list"</span>);
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>          <strong class="jxr_keyword">return</strong> mav;
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>      }
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>      @GetMapping(<span class="jxr_string">"error"</span>)
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>      <strong class="jxr_keyword">public</strong> ModelAndView error() {
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>          ModelAndView mav = <strong class="jxr_keyword">new</strong> ModelAndView();
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>          String errorMessage= <span class="jxr_string">"You are not authorized for the requested data."</span>;
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>          mav.addObject(<span class="jxr_string">"errorMsg"</span>, errorMessage);
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>          mav.setViewName(<span class="jxr_string">"403"</span>);
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>          <strong class="jxr_keyword">return</strong> mav;
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>      }
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2023. All rights reserved.</div>
+</body>
+</html>
