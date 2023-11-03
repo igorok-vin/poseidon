@@ -122,6 +122,8 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB;
 
 INSERT INTO `users`(full_name, password, role, user_name) VALUES
-('John Fox','$2a$12$ryU4rz7KtxNyynoW3Aa.UOvM0M2/WlVk/DD5WUas9A4ptdXsEnEw2','ADMIN','john'),
-('Ronda Perl','$2a$12$ryU4rz7KtxNyynoW3Aa.UOvM0M2/WlVk/DD5WUas9A4ptdXsEnEw2','USER','ronda'),
-('Jerry Perry','$2a$12$ryU4rz7KtxNyynoW3Aa.UOvM0M2/WlVk/DD5WUas9A4ptdXsEnEw2','USER','jerry');
+('John Fox','$2a$12$jquteE.jyY2Zf.Z0ZyFIUu3StAfJaOwj69/3Xd0pKgSmifyPjU9dy','ADMIN','john'),
+('Ronda Perl','$2a$12$jquteE.jyY2Zf.Z0ZyFIUu3StAfJaOwj69/3Xd0pKgSmifyPjU9dy','ADMIN','ronda'),
+('Tony Fox','$2a$12$JPdmDKdLt1fICDeygtUqdORnWAtzhDv/64ogy6UHsO7dxDXpegi/i','USER','tony'),
+('Adam Foster','$2a$12$JPdmDKdLt1fICDeygtUqdORnWAtzhDv/64ogy6UHsO7dxDXpegi/i','USER','adam'),
+('Gordon Moore','$2a$12$JPdmDKdLt1fICDeygtUqdORnWAtzhDv/64ogy6UHsO7dxDXpegi/i','USER','gordon');
