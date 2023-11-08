@@ -22,8 +22,7 @@ debug() More details regarding inner workings of the application which would be
 trace() Not very commonly used unless you want to have some very low-level details 
         regarding the data structures, memory dumps, stack traces, etc.
  * */
-@Controller
-@ResponseBody
+
 public class CustomErrorController implements ErrorController {
 
     private final Logger logger = LoggerFactory.getLogger(CustomErrorController.class);
