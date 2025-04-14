@@ -1,0 +1,45 @@
+
+9
+java:S5786"Remove this 'public' modifier.(ùŒÊÆüÿÿÿÿ
+4
+java:S57867"Remove this 'public' modifier.(’í¡˜
+9
+java:S5786M"Remove this 'public' modifier.(ÌñŸÂûÿÿÿÿ
+4
+java:S5786c"Remove this 'public' modifier.(êëöÔ
+9
+java:S5786j"Remove this 'public' modifier.(óÎãµúÿÿÿÿ
+:
+java:S5786ƒ"Remove this 'public' modifier.(Ñµ½÷úÿÿÿÿ
+:
+java:S5786‘"Remove this 'public' modifier.(é®£şıÿÿÿÿ
+F
+java:S58381"1Use assertThat(actual).hasSize(expected) instead.(°Şæu
+l
+java:S3415D"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(’øÍ
+q
+java:S3415E"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(±Ó°„ûÿÿÿÿ
+q
+java:S3415F"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ƒ˜Œàıÿÿÿÿ
+q
+java:S3415G"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(›ŒÔşÿÿÿÿÿ
+l
+java:S3415H"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(òáã÷
+l
+java:S3415Z"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(’øÍ
+l
+java:S3415["VSwap these 2 arguments so they are in the correct order: actual value, expected value.(€€¶õ
+q
+java:S3415\"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ƒ˜Œàıÿÿÿÿ
+q
+java:S3415]"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(›ŒÔşÿÿÿÿÿ
+l
+java:S3415^"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(òáã÷
+l
+java:S3415{"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(’øÍ
+l
+java:S3415|"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(â›î½
+l
+java:S3415}"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(Åãºæ
+q
+java:S3415~"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(’§ÈŞşÿÿÿÿ

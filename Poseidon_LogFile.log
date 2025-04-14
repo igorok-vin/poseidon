@@ -1,0 +1,73 @@
+2025-04-08 18:40:11.539  INFO 30056 --- [restartedMain] com.nnk.springboot.Application           : Starting Application using Java 17.0.6 on LAPTOP-PN5D3RE4 with PID 30056 (D:\prog_web\prog\Project 7\practice\mycode\project7-portfolio\Poseidon\target\classes started by igoro in D:\prog_web\prog\Project 7\practice\mycode\project7-portfolio\Poseidon)
+2025-04-08 18:40:11.542  INFO 30056 --- [restartedMain] com.nnk.springboot.Application           : The following profiles are active: dev
+2025-04-08 18:40:11.580  INFO 30056 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-08 18:40:11.580  INFO 30056 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-08 18:40:12.185  INFO 30056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-08 18:40:12.244  INFO 30056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+2025-04-08 18:40:12.720  INFO 30056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8050 (http)
+2025-04-08 18:40:12.729  INFO 30056 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-08 18:40:12.729  INFO 30056 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2025-04-08 18:40:12.800  INFO 30056 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-08 18:40:12.800  INFO 30056 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1219 ms
+2025-04-08 18:40:12.829  INFO 30056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-08 18:40:13.192  INFO 30056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-08 18:40:13.196  INFO 30056 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/poseidon'
+2025-04-08 18:40:13.284  INFO 30056 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-08 18:40:13.375  INFO 30056 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2025-04-08 18:40:13.500  INFO 30056 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-04-08 18:40:13.596  INFO 30056 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-04-08 18:40:14.096  INFO 30056 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-08 18:40:14.102  INFO 30056 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-08 18:40:14.438  WARN 30056 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-08 18:40:14.521  INFO 30056 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/resources/**'] with []
+2025-04-08 18:40:14.521  INFO 30056 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/static/**'] with []
+2025-04-08 18:40:14.521  INFO 30056 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/static/fonts/**'] with []
+2025-04-08 18:40:14.521  INFO 30056 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/error'] with []
+2025-04-08 18:40:14.541  INFO 30056 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12377115, org.springframework.security.web.context.SecurityContextPersistenceFilter@1486fc65, org.springframework.security.web.header.HeaderWriterFilter@2fe99ce5, org.springframework.security.web.csrf.CsrfFilter@475629eb, org.springframework.security.web.authentication.logout.LogoutFilter@71c9c08b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5df89273, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@459e88e4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1a0aae3f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a9bb136, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58cc76ed, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1d535063, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ddd3555, org.springframework.security.web.session.SessionManagementFilter@3d5f58d2, org.springframework.security.web.access.ExceptionTranslationFilter@418ac60a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6613fa9c]
+2025-04-08 18:40:14.780  INFO 30056 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-08 18:40:14.806  INFO 30056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8050 (http) with context path ''
+2025-04-08 18:40:14.814  INFO 30056 --- [restartedMain] com.nnk.springboot.Application           : Started Application in 3.565 seconds (JVM running for 12.302)
+2025-04-08 18:40:23.361  INFO 30056 --- [http-nio-8050-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-08 18:40:23.361  INFO 30056 --- [http-nio-8050-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-08 18:40:23.362  INFO 30056 --- [http-nio-8050-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-08 18:41:09.922  INFO 30056 --- [http-nio-8050-exec-3] com.nnk.springboot.service.UserService   : Service: display all users
+2025-04-08 18:41:09.937  INFO 30056 --- [http-nio-8050-exec-3] c.n.s.controllers.UserController         : Controller: GET /user/list. Displaying users list 
+2025-04-08 18:41:10.069  INFO 30056 --- [http-nio-8050-exec-9] com.nnk.springboot.service.UserService   : Service: display all users
+2025-04-08 18:41:10.074  INFO 30056 --- [http-nio-8050-exec-9] c.n.s.controllers.UserController         : Controller: GET /user/list. Displaying users list 
+2025-04-08 18:44:02.296  INFO 30056 --- [http-nio-8050-exec-2] com.nnk.springboot.service.BidService    : Service: display bids list
+2025-04-08 18:44:02.305  INFO 30056 --- [http-nio-8050-exec-2] c.n.s.controllers.BidListController      : Controller: GET /bidList/list. Displaying list of bidList
+2025-04-08 18:44:02.431  INFO 30056 --- [http-nio-8050-exec-7] com.nnk.springboot.service.BidService    : Service: display bids list
+2025-04-08 18:44:02.436  INFO 30056 --- [http-nio-8050-exec-7] c.n.s.controllers.BidListController      : Controller: GET /bidList/list. Displaying list of bidList
+2025-04-08 18:45:26.576  INFO 30056 --- [http-nio-8050-exec-4] com.nnk.springboot.service.UserService   : Service: display all users
+2025-04-08 18:45:26.581  INFO 30056 --- [http-nio-8050-exec-4] c.n.s.controllers.UserController         : Controller: GET /user/list. Displaying users list 
+2025-04-08 18:45:26.688  INFO 30056 --- [http-nio-8050-exec-6] com.nnk.springboot.service.UserService   : Service: display all users
+2025-04-08 18:45:26.693  INFO 30056 --- [http-nio-8050-exec-6] c.n.s.controllers.UserController         : Controller: GET /user/list. Displaying users list 
+2025-04-08 18:45:29.741  INFO 30056 --- [http-nio-8050-exec-3] com.nnk.springboot.service.UserService   : Service: User with Id 8 was found
+2025-04-08 18:45:29.741  INFO 30056 --- [http-nio-8050-exec-3] c.n.s.controllers.UserController         : Controller: GET /user/update/{id}. Displaying form for update existing user
+2025-04-08 18:45:29.861  INFO 30056 --- [http-nio-8050-exec-6] com.nnk.springboot.service.UserService   : Service: User with Id 8 was found
+2025-04-08 18:45:29.861  INFO 30056 --- [http-nio-8050-exec-6] c.n.s.controllers.UserController         : Controller: GET /user/update/{id}. Displaying form for update existing user
+2025-04-08 18:49:36.964  INFO 30056 --- [http-nio-8050-exec-4] com.nnk.springboot.service.UserService   : Service: display all users
+2025-04-08 18:49:36.968  INFO 30056 --- [http-nio-8050-exec-4] c.n.s.controllers.UserController         : Controller: GET /user/list. Displaying users list 
+2025-04-08 18:49:37.042  INFO 30056 --- [http-nio-8050-exec-6] com.nnk.springboot.service.UserService   : Service: display all users
+2025-04-08 18:49:37.047  INFO 30056 --- [http-nio-8050-exec-6] c.n.s.controllers.UserController         : Controller: GET /user/list. Displaying users list 
+2025-04-08 18:49:44.717  INFO 30056 --- [http-nio-8050-exec-5] c.n.s.service.CurvePointService          : Service: display curvePoints list
+2025-04-08 18:49:44.722  INFO 30056 --- [http-nio-8050-exec-5] c.n.s.controllers.CurveController        : Controller: GET /curvePoint/list. Displaying list of curvePoint
+2025-04-08 18:49:45.181  INFO 30056 --- [http-nio-8050-exec-6] c.n.s.service.CurvePointService          : Service: display curvePoints list
+2025-04-08 18:49:45.185  INFO 30056 --- [http-nio-8050-exec-6] c.n.s.controllers.CurveController        : Controller: GET /curvePoint/list. Displaying list of curvePoint
+2025-04-08 18:49:53.176  INFO 30056 --- [http-nio-8050-exec-1] com.nnk.springboot.service.TradeService  : Service: display trade list
+2025-04-08 18:49:53.182  INFO 30056 --- [http-nio-8050-exec-1] c.n.s.controllers.TradeController        : Controller: GET /trade/list. Displaying list of trade
+2025-04-08 18:49:53.260  INFO 30056 --- [http-nio-8050-exec-4] com.nnk.springboot.service.TradeService  : Service: display trade list
+2025-04-08 18:49:53.265  INFO 30056 --- [http-nio-8050-exec-4] c.n.s.controllers.TradeController        : Controller: GET /trade/list. Displaying list of trade
+2025-04-08 18:51:06.140  INFO 30056 --- [http-nio-8050-exec-5] com.nnk.springboot.service.TradeService  : Service: Trade with Id 2 was found
+2025-04-08 18:51:06.140  INFO 30056 --- [http-nio-8050-exec-5] c.n.s.controllers.TradeController        : Controller: GET /trade/update/{id}. Displaying form for update existing trade
+2025-04-08 18:51:06.258  INFO 30056 --- [http-nio-8050-exec-3] com.nnk.springboot.service.TradeService  : Service: Trade with Id 2 was found
+2025-04-08 18:51:06.258  INFO 30056 --- [http-nio-8050-exec-3] c.n.s.controllers.TradeController        : Controller: GET /trade/update/{id}. Displaying form for update existing trade
+2025-04-08 18:51:41.971  INFO 30056 --- [http-nio-8050-exec-6] com.nnk.springboot.service.TradeService  : Service: display trade list
+2025-04-08 18:51:41.976  INFO 30056 --- [http-nio-8050-exec-6] c.n.s.controllers.TradeController        : Controller: GET /trade/list. Displaying list of trade
+2025-04-08 18:51:42.053  INFO 30056 --- [http-nio-8050-exec-9] com.nnk.springboot.service.TradeService  : Service: display trade list
+2025-04-08 18:51:42.058  INFO 30056 --- [http-nio-8050-exec-9] c.n.s.controllers.TradeController        : Controller: GET /trade/list. Displaying list of trade
+2025-04-08 18:51:44.235  INFO 30056 --- [http-nio-8050-exec-2] c.n.s.controllers.TradeController        : Controller: GET /trade/add. Displaying form for adding new trade
+2025-04-08 18:51:44.305  INFO 30056 --- [http-nio-8050-exec-5] c.n.s.controllers.TradeController        : Controller: GET /trade/add. Displaying form for adding new trade
+2025-04-08 18:53:31.070  INFO 30056 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-08 18:53:31.075  INFO 30056 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-08 18:53:31.088  INFO 30056 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

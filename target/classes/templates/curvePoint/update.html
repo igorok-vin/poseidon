@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8"/>
-<title>Home</title>
-<link rel="stylesheet" href="../../css/bootstrap.min.css" >
-</head>
+<head th:replace="fragments::head"></head>
 <body>
 <div class="container">
 	<div class="row">
@@ -14,7 +10,7 @@
 
 	<div class="row">
 		<form action="#" th:action="@{/curvePoint/update/{id}(id=${curvePoint.id})}"
-			  th:object="${curvePoint}" method="post" class="form-horizontal" style="width: 100%">
+			  th:object="${curvePoint}" method="post" class="form-horizontal entitiesList" style="width: 100%">
 			<div class="form-group">
 				<label for="curveId" class="col-sm-2 control-label">CurvePointId</label>
 				<div class="col-sm-10">
@@ -44,11 +40,18 @@
 				<div class="col-sm-12">
 					<input type="hidden" th:field="*{id}">
 					<a class="btn btn-danger btn-sm" href="/curvePoint/list">Cancel</a>
-					<input class="btn btn-primary btn-sm" type="submit" value="Update curvePoint">
+					<input  id="action_button" class="btn btn-primary btn-sm" type="submit" value="Update curvePoint">
 				</div>
 			</div>
 		</form>
 	</div>
+<<div th:replace="fragments::modal_dialog_update_warning('tag')"></div>
+
 </div>
+<script type="text/javascript">
+	deletePermission = "[[${DELETE_PERMISSION}]]";
+	updatePermission = "[[${UPDATE_PERMISSION}]]";
+</script>
+<script th:src="@{/js/script.js}" type="text/javascript"></script>
 </body>
 </html>

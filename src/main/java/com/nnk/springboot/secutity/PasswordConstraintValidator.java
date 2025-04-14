@@ -32,8 +32,7 @@ public class PasswordConstraintValidator implements ConstraintValidator<Password
 
         String messageTemplate = messages.stream().collect(Collectors.joining(","));
         if (context != null) {
-            context.buildConstraintViolationWithTemplate(messageTemplate).addConstraintViolation()
-                    .disableDefaultConstraintViolation();
+            context.buildConstraintViolationWithTemplate(messageTemplate).addConstraintViolation().disableDefaultConstraintViolation();
         }
         return false;
     }

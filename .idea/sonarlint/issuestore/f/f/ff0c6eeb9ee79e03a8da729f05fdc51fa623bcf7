@@ -1,0 +1,13 @@
+
+j
+java:S1192"HDefine a constant instead of duplicating this literal "bidList" 3 times.(êëéûÿÿÿÿ8‹”ç…Ñ1
+s
+java:S1192>"WDefine a constant instead of duplicating this literal "redirect:/bidList/list" 3 times.(ò·¸.8‹”ç…Ñ1
+b
+java:S4684*"@Replace this persistent entity with a simple POJO or DTO object.(ç¦ïÇøÿÿÿÿ8Ë”ç…Ñ1
+b
+java:S46847"@Replace this persistent entity with a simple POJO or DTO object.(‘¦Áíýÿÿÿÿ8Ð”ç…Ñ1
+c
+java:S3457M"AFormat specifiers should be used instead of string concatenation.(¨§„àúÿÿÿÿ8Û”ç…Ñ1
+b
+java:S4684\"@Replace this persistent entity with a simple POJO or DTO object.(‚»ªòúÿÿÿÿ8Ý”ç…Ñ1

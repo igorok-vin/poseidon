@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+    <title>Poseidon</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" >
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+
+<body>
+    <div th:fragment="modal_dialog_deletion_warning(removeTag)" th:remove="${removeTag}">
+        <div class="overlay_deletion_prohibited" id="modal_deletion_prohibited">
+            <div class="modal_window_deletion_prohibited">
+                <div class="modal_window_deletion_update_prohibited__close">&times;
+                </div>
+                <div class="modal_window_deletion_update_prohibited__subtitle">The Delete function is disabled for safety reasons. Demonstration mode enabled
+                </div>
+                <div class="delete_block">
+                    <a href="" class="btn cancelButton">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:fragment="modal_dialog_update_warning(removeTag)" th:remove="${removeTag}">
+        <div class="overlay_update_prohibited" id="modal_update_prohibited">
+            <div class="modal_window_update_prohibited">
+                <div class="modal_window_deletion_update_prohibited__close">&times;
+                </div>
+                <div class="modal_window_deletion_update_prohibited__subtitle">The Update function is disabled for safety reasons. Demonstration mode enabled
+                </div>
+                <div class="delete_block">
+                    <a class="btn cancelButton">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:fragment="modal_dialog_confirm_delete(entity, removeTag)" th:remove="${removeTag}">
+        <div class="overlay_deletion_confirmation" id="modal_deletion_confirmation">
+            <div class="modal_window_deletion_confirmation">
+                <a href="" class="modal_window_deletion_confirmation__close">&times;
+                </a>
+                <div class="modal_window_deletion_confirmation__subtitle">Are you sure you want to delete this [[${entity}]]?
+                </div>
+                <a href="" class="btn" id="button_submit_modal_window_deletion_confirmation">Delete</a>
+                <a href="" class="btn cancelButton cancelConfirmDelete">Go back</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

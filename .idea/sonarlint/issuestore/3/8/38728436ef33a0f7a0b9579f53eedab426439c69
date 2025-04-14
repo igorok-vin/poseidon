@@ -1,0 +1,18 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(é¬ê®8ò¥µ¤¼1
+I
+java:S1128"-Remove this unused import 'org.slf4j.Logger'.(íØ®68ò¥µ¤¼1
+Q
+java:S1128"4Remove this unused import 'org.slf4j.LoggerFactory'.(–ÿÚŞ8ó¥µ¤¼1
+s
+java:S1128"WRemove this unused import 'org.springframework.boot.web.servlet.error.ErrorController'.(ù±˜n8ó¥µ¤¼1
+h
+java:S1128"FRemove this unused import 'org.springframework.stereotype.Controller'.(øŠ—Öùÿÿÿÿ8éé´¤¼1
+l
+java:S1128"ORemove this unused import 'org.springframework.web.bind.annotation.GetMapping'.(‡¡‰Ø8ó¥µ¤¼1
+l
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.ResponseBody'.(•¶¶êøÿÿÿÿ
+k
+java:S1128	"IRemove this unused import 'org.springframework.web.servlet.ModelAndView'.(Ç¨ÿäûÿÿÿÿ8ó¥µ¤¼1
+`
+java:S1128"CRemove this unused import 'javax.servlet.http.HttpServletResponse'.(Á¨ïë8ó¥µ¤¼1

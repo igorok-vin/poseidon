@@ -1,0 +1,13 @@
+
+R
+java:S2629."7Use the built-in formatting to construct this argument.(‘ú„­ûÿÿÿÿ
+R
+java:S2629h"7Use the built-in formatting to construct this argument.(¼•ê”ýÿÿÿÿ
+\
+java:S3457."AFormat specifiers should be used instead of string concatenation.(‘ú„­ûÿÿÿÿ
+h
+java:S6204T"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(†öúš
+W
+java:S3457_"AFormat specifiers should be used instead of string concatenation.(Ò˜—Ž
+\
+java:S3457h"AFormat specifiers should be used instead of string concatenation.(¼•ê”ýÿÿÿÿ

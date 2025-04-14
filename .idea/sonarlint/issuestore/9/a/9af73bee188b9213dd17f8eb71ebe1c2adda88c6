@@ -1,0 +1,49 @@
+
+9
+java:S5786 "Remove this 'public' modifier.(´–ûßıÿÿÿÿ
+9
+java:S57869"Remove this 'public' modifier.(§İû®şÿÿÿÿ
+4
+java:S5786L"Remove this 'public' modifier.(¨‹ûÌ
+9
+java:S5786`"Remove this 'public' modifier.(¥€ÇÎúÿÿÿÿ
+4
+java:S5786g"Remove this 'public' modifier.(ºà·¹
+5
+java:S5786€"Remove this 'public' modifier.(ˆæğÈ
+F
+java:S58383"1Use assertThat(actual).hasSize(expected) instead.(°Şæu
+T
+java:S5853E">Join these multiple assertions subject to one assertion chain.(øŠî›
+Y
+java:S5853G">Join these multiple assertions subject to one assertion chain.(ùÑøÇùÿÿÿÿ
+l
+java:S3415E"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(øŠî›
+q
+java:S3415F"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ä¼—øÿÿÿÿ
+q
+java:S3415G"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ùÑøÇùÿÿÿÿ
+l
+java:S3415H"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ÇëÀ–
+T
+java:S5853X">Join these multiple assertions subject to one assertion chain.(øŠî›
+Y
+java:S5853Z">Join these multiple assertions subject to one assertion chain.(ùÑøÇùÿÿÿÿ
+l
+java:S3415X"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(øŠî›
+q
+java:S3415Y"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ä¼—øÿÿÿÿ
+q
+java:S3415Z"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ùÑøÇùÿÿÿÿ
+l
+java:S3415["VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ÇëÀ–
+q
+java:S3415\"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ä¼—øÿÿÿÿ
+l
+java:S3415y"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(øŠî›
+q
+java:S3415z"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(‰­­¦şÿÿÿÿ
+l
+java:S3415{"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(„Œ”¾
+q
+java:S3415|"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(Ê¬Ñüøÿÿÿÿ

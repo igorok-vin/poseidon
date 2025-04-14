@@ -22,7 +22,6 @@ com\nnk\springboot\exception\UserNotFoundException.class
 com\nnk\springboot\domain\User.class
 com\nnk\springboot\repositories\TradeRepository.class
 com\nnk\springboot\repositories\BidListRepository.class
-com\nnk\springboot\controllers\CustomErrorController.class
 com\nnk\springboot\secutity\PasswordConstraintValidator.class
 com\nnk\springboot\controllers\CurveController.class
 com\nnk\springboot\service\CurvePointService.class

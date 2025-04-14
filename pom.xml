@@ -5,11 +5,11 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.guides.springboothelloworld</groupId>
-	<artifactId>spring-boot-skeleton</artifactId>
+	<artifactId>poseidon-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<url>http://www.your.site.com/</url>
-	<name>spring-boot-skeleton</name>
+	<name>poseidon-app</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>

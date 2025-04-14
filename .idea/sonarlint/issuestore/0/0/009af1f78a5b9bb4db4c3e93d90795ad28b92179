@@ -1,0 +1,51 @@
+
+9
+java:S5786 "Remove this 'public' modifier.(€ú¢üÿÿÿÿ
+2
+java:S5786?"Remove this 'public' modifier.(Ç÷8
+4
+java:S5786V"Remove this 'public' modifier.(®îùÌ
+4
+java:S5786n"Remove this 'public' modifier.(¦Ãí
+4
+java:S5786u"Remove this 'public' modifier.(¦Ç…Ö
+:
+java:S5786–"Remove this 'public' modifier.(ò˜Ş–ûÿÿÿÿ
+F
+java:S58389"1Use assertThat(actual).hasSize(expected) instead.(°Şæu
+l
+java:S3415M"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(øŠî›
+q
+java:S3415N"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(Ò¦§Óøÿÿÿÿ
+q
+java:S3415O"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(È•‡äıÿÿÿÿ
+q
+java:S3415P"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(§ú´“ÿÿÿÿÿ
+q
+java:S3415Q"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ŸÊ¡üÿÿÿÿ
+q
+java:S3415R"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ƒ…¿ øÿÿÿÿ
+l
+java:S3415e"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(øŠî›
+q
+java:S3415f"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(Ò¦§Óøÿÿÿÿ
+q
+java:S3415g"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(È•‡äıÿÿÿÿ
+q
+java:S3415h"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(§ú´“ÿÿÿÿÿ
+q
+java:S3415i"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ŸÊ¡üÿÿÿÿ
+q
+java:S3415j"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(ƒ…¿ øÿÿÿÿ
+m
+java:S3415"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(øŠî›
+l
+java:S3415"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(üö k
+l
+java:S3415"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(»Ÿ•
+m
+java:S3415"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(˜ö‚À
+r
+java:S3415‘"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(Âù¦ùÿÿÿÿ
+m
+java:S3415’"VSwap these 2 arguments so they are in the correct order: actual value, expected value.(¬üæº
